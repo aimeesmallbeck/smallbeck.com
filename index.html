@@ -65,36 +65,15 @@
             align-items: center;
         }
         .book-cover {
-            background: linear-gradient(145deg, #2a2a40 0%, #1a1a2e 100%);
             border-radius: 8px;
-            aspect-ratio: 2/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.1);
         }
-        .book-cover-text {
-            text-align: center;
-            padding: 40px;
-        }
-        .book-cover-text .series {
-            font-size: 0.85em;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #888;
-            margin-bottom: 15px;
-        }
-        .book-cover-text .title {
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-        .book-cover-text .subtitle {
-            font-size: 1em;
-            color: #aaa;
-            font-style: italic;
+        .book-cover img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         .hero-info h2 {
             font-size: 2.8em;
@@ -191,14 +170,27 @@
             justify-content: center;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
-        .book-cover-small .book-cover-text {
-            color: #333;
-        }
-        .book-cover-small .book-cover-text .series {
+        .book-cover-placeholder {
+            text-align: center;
+            padding: 40px;
             color: #666;
         }
-        .book-cover-small .book-cover-text .subtitle {
-            color: #666;
+        .book-cover-placeholder .series {
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .book-cover-placeholder .title {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .book-cover-placeholder .subtitle {
+            font-size: 0.9em;
+            color: #888;
+            font-style: italic;
         }
         .book-info h3 {
             font-size: 2.2em;
@@ -350,7 +342,7 @@
                 gap: 40px;
             }
             .book-cover {
-                max-width: 300px;
+                max-width: 350px;
                 margin: 0 auto;
             }
             .hero-info h2 {
@@ -383,11 +375,7 @@
     <section class="hero-book" id="books">
         <div class="hero-content">
             <div class="book-cover">
-                <div class="book-cover-text">
-                    <div class="series">THE FEED · BOOK ONE</div>
-                    <div class="title">GLITCH<br>PROTOCOL</div>
-                    <div class="subtitle">A Novel</div>
-                </div>
+                <img src="glitch-protocol-cover.jpg" alt="THE FEED: Glitch Protocol - Book Cover">
             </div>
             <div class="hero-info">
                 <span class="bestseller-badge">Now Available</span>
@@ -418,7 +406,7 @@
     <section class="book-section">
         <div class="book-content">
             <div class="book-cover-small">
-                <div class="book-cover-text">
+                <div class="book-cover-placeholder">
                     <div class="series">THE FEED · BOOK TWO</div>
                     <div class="title">SOURCE<br>CODE</div>
                     <div class="subtitle">Coming 2026</div>
@@ -457,7 +445,7 @@
     <section class="book-section">
         <div class="book-content">
             <div class="book-cover-small">
-                <div class="book-cover-text">
+                <div class="book-cover-placeholder">
                     <div class="series">THE FEED · BOOK THREE</div>
                     <div class="title">AUTONOMY</div>
                     <div class="subtitle">Coming 2026</div>
