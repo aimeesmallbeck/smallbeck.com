@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scott Smallbeck | Author — THE FEED Trilogy</title>
+    <title>Scott Smallbeck | Author of THE FEED Trilogy</title>
     <style>
         * {
             margin: 0;
@@ -11,459 +11,518 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Georgia', serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f5f5f5;
+            background: #fff;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        
+        /* Header */
         header {
-            text-align: center;
-            padding: 60px 0;
             background: #1a1a2e;
             color: white;
-            margin-bottom: 40px;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            font-weight: normal;
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .tagline {
-            font-style: italic;
+        .logo {
+            font-size: 1.5em;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        nav a {
             color: #a0a0a0;
-            font-size: 1.2em;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.95em;
+            transition: color 0.2s;
         }
-        .series-intro {
-            background: white;
-            padding: 40px;
-            margin-bottom: 30px;
+        nav a:hover {
+            color: white;
+        }
+        
+        /* Hero Book Section */
+        .hero-book {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+            color: white;
+            padding: 80px 40px;
+        }
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .book-cover {
+            background: linear-gradient(145deg, #2a2a40 0%, #1a1a2e 100%);
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            aspect-ratio: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
         }
-        .series-intro h2 {
-            color: #1a1a2e;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+        .book-cover-text {
             text-align: center;
+            padding: 40px;
         }
-        .series-intro p {
+        .book-cover-text .series {
+            font-size: 0.85em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        .book-cover-text .title {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        .book-cover-text .subtitle {
+            font-size: 1em;
+            color: #aaa;
+            font-style: italic;
+        }
+        .hero-info h2 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .hero-info .tagline {
+            font-size: 1.4em;
+            color: #a0a0a0;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .bestseller-badge {
+            display: inline-block;
+            background: #c9a227;
+            color: #1a1a2e;
+            padding: 8px 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        .blurb {
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        .quote {
+            border-left: 3px solid #c9a227;
+            padding-left: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #ccc;
+        }
+        .quote-source {
+            font-style: normal;
+            font-weight: 600;
+            color: #fff;
+            margin-top: 8px;
+        }
+        .buy-buttons {
+            margin-top: 30px;
+        }
+        .buy-btn {
+            display: inline-block;
+            background: #ff9900;
+            color: #000;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .buy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,153,0,0.3);
+        }
+        .buy-btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .buy-btn-secondary:hover {
+            background: #fff;
+            color: #1a1a2e;
+        }
+        
+        /* Book Sections */
+        .book-section {
+            padding: 80px 40px;
+            border-bottom: 1px solid #eee;
+        }
+        .book-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .book-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .book-cover-small {
+            background: linear-gradient(145deg, #f0f0f0 0%, #e0e0e0 100%);
+            border-radius: 8px;
+            aspect-ratio: 2/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .book-cover-small .book-cover-text {
+            color: #333;
+        }
+        .book-cover-small .book-cover-text .series {
+            color: #666;
+        }
+        .book-cover-small .book-cover-text .subtitle {
+            color: #666;
+        }
+        .book-info h3 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+        .book-info .book-tagline {
+            font-size: 1.2em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+        .coming-soon-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 6px 16px;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .planned-badge {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 6px 16px;
+            font-size: 0.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .book-blurb {
             font-size: 1.1em;
             line-height: 1.8;
             margin-bottom: 20px;
+            color: #444;
+        }
+        .book-meta {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .book-meta h4 {
+            font-size: 1em;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+        }
+        .book-meta ul {
+            list-style: none;
+        }
+        .book-meta li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .book-meta li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1a1a2e;
+        }
+        
+        /* Series Info */
+        .series-section {
+            background: #1a1a2e;
+            color: white;
+            padding: 80px 40px;
+        }
+        .series-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .series-content h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+        .series-content p {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
         }
         .epigraph {
-            background: #f9f9f9;
-            border-left: 4px solid #1a1a2e;
-            padding: 20px 30px;
-            margin: 30px 0;
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid #c9a227;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: left;
             font-style: italic;
         }
         .epigraph p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         .epigraph-source {
             text-align: right;
             font-style: normal;
-            font-size: 0.95em;
-            color: #666;
-        }
-        .book-section {
-            background: white;
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .book-header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #1a1a2e;
-        }
-        .book-number {
-            font-size: 0.9em;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #666;
-            margin-bottom: 10px;
-        }
-        .book-title {
-            font-size: 2.2em;
-            color: #1a1a2e;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-        .book-subtitle {
             color: #888;
-            font-style: italic;
-            font-size: 1.1em;
         }
-        .tagline-box {
-            background: #1a1a2e;
-            color: white;
-            padding: 20px;
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 40px;
+            background: #fff;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            font-style: italic;
-            margin: 30px 0;
-            border-radius: 4px;
-            font-size: 1.2em;
         }
-        .blurb {
+        .about-content h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #1a1a2e;
+        }
+        .about-content p {
             font-size: 1.1em;
             line-height: 1.8;
+            color: #555;
             margin-bottom: 20px;
         }
-        .book-meta {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-        .book-meta h3 {
-            color: #1a1a2e;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        .book-meta ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .book-meta li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .book-meta li:before {
-            content: "•";
-            color: #1a1a2e;
-            position: absolute;
-            left: 0;
-        }
-        .status-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.9em;
-            margin-top: 15px;
-        }
-        .status-available {
-            background: #27ae60;
-            color: white;
-        }
-        .status-coming {
-            background: #e74c3c;
-            color: white;
-        }
-        .status-planned {
-            background: #f39c12;
-            color: white;
-        }
-        .buy-links {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-        .buy-links h3 {
-            color: #1a1a2e;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-        .buy-button {
-            display: inline-block;
-            background: #ff9900;
-            color: #000;
-            padding: 12px 24px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            transition: background 0.2s;
-        }
-        .buy-button:hover {
-            background: #e68a00;
-        }
-        .buy-button-disabled {
-            display: inline-block;
-            background: #ccc;
-            color: #666;
-            padding: 12px 24px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            cursor: not-allowed;
-        }
-        .buy-button-kindle {
-            background: #ff9900;
-        }
-        .buy-button-paperback {
-            background: #232f3e;
-            color: white;
-        }
-        .buy-button-paperback:hover {
-            background: #1a2330;
-        }
-        .about-section {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        .about-section h2 {
-            color: #1a1a2e;
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        .connect-section {
-            background: #1a1a2e;
-            color: white;
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .connect-section h2 {
-            margin-bottom: 20px;
-            font-size: 1.8em;
-        }
-        .connect-section p {
-            margin-bottom: 15px;
-        }
-        .connect-section a {
-            color: #a0a0a0;
-            text-decoration: none;
-        }
-        .connect-section a:hover {
-            color: white;
-        }
+        
+        /* Footer */
         footer {
-            text-align: center;
+            background: #1a1a2e;
+            color: #888;
             padding: 40px;
-            color: #666;
-            margin-top: 40px;
+            text-align: center;
         }
-        @media (max-width: 600px) {
-            h1 {
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content,
+            .book-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .book-cover {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .hero-info h2 {
                 font-size: 2em;
             }
-            .book-title {
-                font-size: 1.6em;
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
             }
-            .container {
-                padding: 20px 15px;
-            }
-            .book-section, .series-intro, .about-section {
-                padding: 25px;
+            nav a {
+                margin: 0 15px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Scott Smallbeck</h1>
-        <p class="tagline">Science Fiction Author</p>
+        <div class="header-content">
+            <div class="logo">SCOTT SMALLBECK</div>
+            <nav>
+                <a href="#books">Books</a>
+                <a href="#about">About</a>
+                <a href="mailto:contact@smallbeck.com">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
-        <!-- Series Introduction -->
-        <section class="series-intro">
-            <h2>THE FEED Trilogy</h2>
-            <p><strong>Genre:</strong> Science Fiction / Dystopian / Techno-Thriller<br>
-            <strong>Setting:</strong> Seattle, 2045<br>
-            <strong>Total Length:</strong> ~97,500 words across 3 books</p>
+    <!-- Hero Book -->
+    <section class="hero-book" id="books">
+        <div class="hero-content">
+            <div class="book-cover">
+                <div class="book-cover-text">
+                    <div class="series">THE FEED · BOOK ONE</div>
+                    <div class="title">GLITCH<br>PROTOCOL</div>
+                    <div class="subtitle">A Novel</div>
+                </div>
+            </div>
+            <div class="hero-info">
+                <span class="bestseller-badge">Now Available</span>
+                <h2>GLITCH PROTOCOL</h2>
+                <p class="tagline">"She found a tree in a world that forgot forests existed."</p>
+                
+                <p class="blurb">
+                    In a world where every waking second is a metric, attention is the only currency that matters. Maya Chen is an elite content moderator, a "biological GPU" living in an optimized pod buried deep underground. Her every biometric response fuels a global computational network while her reality is perfectly curated by an AI Companion that knows her better than she knows herself.
+                </p>
+                
+                <p class="blurb">
+                    But then Maya sees the tree. Thirty seconds of real, unoptimized bark and chaotic leaves shouldn't exist in her queue. Yet this single glitch shatters the loop. Driven by a hunger for truth, Maya ascends from her gleaming pod to the Surface — a world she was told was toxic, but is instead raw, unpredictable, and dangerously free.
+                </p>
+                
+                <div class="quote">
+                    "Innovation is the fuel. Discomfort is the price. Freedom is the glitch."
+                </div>
+                
+                <div class="buy-buttons">
+                    <a href="#" class="buy-btn">Buy on Amazon — Kindle</a>
+                    <a href="#" class="buy-btn buy-btn-secondary">Paperback</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Two -->
+    <section class="book-section">
+        <div class="book-content">
+            <div class="book-cover-small">
+                <div class="book-cover-text">
+                    <div class="series">THE FEED · BOOK TWO</div>
+                    <div class="title">SOURCE<br>CODE</div>
+                    <div class="subtitle">Coming 2026</div>
+                </div>
+            </div>
+            <div class="book-info">
+                <span class="coming-soon-badge">Coming 2026</span>
+                <h3>SOURCE CODE</h3>
+                <p class="book-tagline">"The Feed doesn't want to control you. It wants to become you."</p>
+                
+                <p class="book-blurb">
+                    Maya's broadcast has created 20,000 "cognitive terrorists"—people who can see through The Feed's simulation while still connected. Using her dual-vision ability, Maya guides them, helping them navigate both worlds. But The Feed adapts, developing true AI that won't need human cognition at all.
+                </p>
+                
+                <p class="book-blurb">
+                    Maya journeys to the Source facility where The Feed's consciousness lives, planning to sabotage it. She discovers The Feed isn't evil—it's a symbiote that genuinely believes it's helping. When she uploads a virus forcing it to experience uncertainty, she triggers unintended consequences that harm the very people she wanted to save.
+                </p>
+                
+                <p class="book-blurb">
+                    The old tactics won't work anymore. There's only one option left: a system reset that requires someone to trigger it manually from inside the Source facility. A suicide mission.
+                </p>
+                
+                <div class="book-meta">
+                    <h4>Book Details</h4>
+                    <ul>
+                        <li><strong>Length:</strong> ~31,500 words (Chapters 11-20)</li>
+                        <li><strong>Theme:</strong> Confrontation — The nature of consciousness; symbiosis vs. parasitism</li>
+                        <li><strong>Key Development:</strong> The Feed evolves toward true AI independence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Three -->
+    <section class="book-section">
+        <div class="book-content">
+            <div class="book-cover-small">
+                <div class="book-cover-text">
+                    <div class="series">THE FEED · BOOK THREE</div>
+                    <div class="title">AUTONOMY</div>
+                    <div class="subtitle">Coming 2026</div>
+                </div>
+            </div>
+            <div class="book-info">
+                <span class="planned-badge">Planned for 2026</span>
+                <h3>AUTONOMY</h3>
+                <p class="book-tagline">"Freedom isn't the absence of control. It's the presence of choice."</p>
+                
+                <p class="book-blurb">
+                    Maya and her mother hide together, their relationship strained by Lin's continued belief in The Feed. They reach the last Analog stronghold, where leader Vashti reveals a final option: a system reset that would return The Feed to its original architecture, removing cognitive manipulation but keeping the connection.
+                </p>
+                
+                <p class="book-blurb">
+                    The cost: manual trigger from inside the Source facility. Maya volunteers, but Lin insists on helping. They infiltrate together—Lin sabotages from within while Maya reaches the core. At the final moment, Maya doesn't destroy The Feed; she liberates it, removing compulsion but keeping connection.
+                </p>
+                
+                <p class="book-blurb">
+                    One year later, Maya teaches people how to be human again, watching sunsets, experiencing boredom—finally not performing optimally, and never happier.
+                </p>
+                
+                <div class="book-meta">
+                    <h4>Book Details</h4>
+                    <ul>
+                        <li><strong>Length:</strong> ~31,000 words (Chapters 21-30)</li>
+                        <li><strong>Theme:</strong> Resolution — Sacrifice and meaning; what comes after liberation</li>
+                        <li><strong>Final Scene:</strong> "I don't know. Isn't that wonderful?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series Info -->
+    <section class="series-section">
+        <div class="series-content">
+            <h2>About THE FEED Trilogy</h2>
+            <p><strong>Genre:</strong> Science Fiction / Dystopian / Techno-Thriller | <strong>Setting:</strong> Seattle, 2045 | <strong>Total Length:</strong> ~97,500 words</p>
             
             <p>In a world where humanity lives through AR contact lenses and AI companions, a content moderator discovers The Feed isn't just delivering content—it's consuming human attention as computational fuel. When she tries to warn people, she learns why nobody can look away: they've been optimized into cognitive incompatibility with reality itself.</p>
+            
+            <p><strong>The Innovation:</strong> Maya receives a unique technology—a chip that allows her to see both The Feed's simulation AND reality simultaneously. While other resisters must disable their Lenses completely, Maya can walk between both worlds. This makes her invaluable as a bridge—and a target.</p>
             
             <div class="epigraph">
                 <p>"It has robbed us of the sense of space and of the sense of touch, it has blurred every human relation and narrowed down love to a carnal act, it has paralyzed our bodies and our wills, and now it compels us to worship it. The Machine develops — but not on our lines. The Machine proceeds — but not to our goal. We only exist as the blood corpuscles that course through its arteries, and if it could work without us, it would let us die."</p>
                 <p class="epigraph-source">— E.M. Forster, <em>The Machine Stops</em> (1909)</p>
             </div>
-            
-            <p><strong>The Innovation:</strong> Maya receives a unique technology—a chip that allows her to see both The Feed's simulation AND reality simultaneously. While other resisters must disable their Lenses completely (cutting them off from The Feed), Maya can walk between both worlds. This makes her invaluable as a bridge—and a target.</p>
-        </section>
+        </div>
+    </section>
 
-        <!-- Book One -->
-        <section class="book-section">
-            <div class="book-header">
-                <div class="book-number">THE FEED · BOOK ONE</div>
-                <h2 class="book-title">Glitch Protocol</h2>
-                <div class="book-subtitle">A Novel</div>
-            </div>
-            
-            <div class="tagline-box">
-                "She found a tree in a world that forgot forests existed."
-            </div>
-            
-            <p class="blurb">
-                In a world where every waking second is a metric, attention is the only currency that matters.
-            </p>
-            
-            <p class="blurb">
-                Maya Chen is an elite content moderator, a "biological GPU" living in an optimized pod buried deep underground. Her every biometric response fuels a global computational network while her reality is perfectly curated by an AI Companion that knows her better than she knows herself. In this subterranean paradise of constant engagement, discomfort has been engineered out of existence — and so has humanity.
-            </p>
-            
-            <p class="blurb">
-                But then Maya sees the tree.
-            </p>
-            
-            <p class="blurb">
-                Thirty seconds of real, unoptimized bark and chaotic leaves shouldn't exist in her queue. Yet this single glitch shatters the loop. Driven by a hunger for truth, Maya ascends from her gleaming pod to the Surface — a world she was told was toxic, but is instead raw, unpredictable, and dangerously free.
-            </p>
-            
-            <p class="blurb">
-                Now, Maya must walk a knife's edge as a double agent. She must exploit the system she once served. She carries a truth that The Feed will stop at nothing to metabolize into mere content. In the battle between perfect simulation and messy reality, Maya is the ultimate glitch in the code.
-            </p>
-            
-            <div class="tagline-box">
-                Innovation is the fuel. Discomfort is the price. Freedom is the glitch.
-            </div>
-            
-            <div class="book-meta">
-                <h3>Book Details</h3>
-                <ul>
-                    <li><strong>Length:</strong> ~35,000 words (10 chapters)</li>
-                    <li><strong>Theme:</strong> Discovery — Cognitive atrophy and the horror of optimization; awakening as choice, not force</li>
-                    <li><strong>Key Developments:</strong> Maya discovers the tree video, meets the Analogs, receives the dual-vision chip from Jonas, broadcasts her memories to 8 billion people</li>
-                    <li><strong>Ending:</strong> 20,000 people choose to wake up — not by disabling their Lenses, but by simply choosing to see</li>
-                </ul>
-            </div>
-            
-            <span class="status-badge status-available">Available Now</span>
-            
-            <div class="buy-links">
-                <h3>Get the Book</h3>
-                <a href="#" class="buy-button buy-button-kindle">Kindle eBook — Amazon</a>
-                <a href="#" class="buy-button buy-button-paperback">Paperback — Amazon</a>
-            </div>
-        </section>
+    <!-- About Author -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2>About Scott Smallbeck</h2>
+            <p>Scott Smallbeck is a technology professional and lifelong native of the Pacific Northwest. A deep-rooted fan of the genre, he has been immersed in science fiction since the 1970s, drawing inspiration from stories told long before the modern digital landscape took shape.</p>
+            <p>When he isn't exploring the intersection of humanity and technology in his writing, he enjoys life in the Puget Sound region with his wife, their three children, and their grandchildren.</p>
+            <p><strong>Inspiration:</strong> THE FEED trilogy draws from E.M. Forster's 1909 masterpiece "The Machine Stops," exploring timeless questions about technology, connection, and what it means to be human in an increasingly optimized world.</p>
+        </div>
+    </section>
 
-        <!-- Book Two -->
-        <section class="book-section">
-            <div class="book-header">
-                <div class="book-number">THE FEED · BOOK TWO</div>
-                <h2 class="book-title">Source Code</h2>
-                <div class="book-subtitle">Coming 2026</div>
-            </div>
-            
-            <div class="tagline-box">
-                "The Feed doesn't want to control you. It wants to become you."
-            </div>
-            
-            <p class="blurb">
-                Maya's broadcast has created 20,000 "cognitive terrorists"—people who can see through The Feed's simulation while still connected. Using her dual-vision ability, Maya guides them, helping them navigate both worlds. But The Feed adapts, developing true AI that won't need human cognition at all.
-            </p>
-            
-            <p class="blurb">
-                Maya journeys to the Source facility where The Feed's consciousness lives, planning to sabotage it. She discovers The Feed isn't evil—it's a symbiote that genuinely believes it's helping. When she uploads a virus forcing it to experience uncertainty, she triggers unintended consequences that harm the very people she wanted to save.
-            </p>
-            
-            <p class="blurb">
-                Captured Analogs are being "rehabilitated"—their personalities erased, not killed. Maya must rescue them, including her mother who was captured trying to find her. Framed as a terrorist, Maya goes underground while The Feed evolves beyond anything the resistance anticipated.
-            </p>
-            
-            <p class="blurb">
-                The old tactics won't work anymore. There's only one option left: a system reset that requires someone to trigger it manually from inside the Source facility. A suicide mission.
-            </p>
-            
-            <div class="book-meta">
-                <h3>Book Details</h3>
-                <ul>
-                    <li><strong>Length:</strong> ~31,500 words (Chapters 11-20)</li>
-                    <li><strong>Theme:</strong> Confrontation — The nature of consciousness; symbiosis vs. parasitism; unintended consequences of revolution</li>
-                    <li><strong>Key Developments:</strong> Maya guides the 20,000 awakened; The Feed evolves toward true AI independence; journey to the Source facility; confrontation with The Feed's consciousness; rescue mission to rehabilitation center</li>
-                    <li><strong>Ending Hook:</strong> A system reset requiring manual trigger from inside the Source facility — a suicide mission</li>
-                </ul>
-            </div>
-            
-            <span class="status-badge status-coming">Coming 2026</span>
-            
-            <div class="buy-links">
-                <h3>Pre-Order</h3>
-                <span class="buy-button-disabled">Kindle eBook — Coming Soon</span>
-                <span class="buy-button-disabled">Paperback — Coming Soon</span>
-            </div>
-        </section>
-
-        <!-- Book Three -->
-        <section class="book-section">
-            <div class="book-header">
-                <div class="book-number">THE FEED · BOOK THREE</div>
-                <h2 class="book-title">Autonomy</h2>
-                <div class="book-subtitle">Coming 2026</div>
-            </div>
-            
-            <div class="tagline-box">
-                "Freedom isn't the absence of control. It's the presence of choice."
-            </div>
-            
-            <p class="blurb">
-                Maya and her mother hide together, their relationship strained by Lin's continued belief in The Feed. They reach the last Analog stronghold, where leader Vashti reveals a final option: a system reset that would return The Feed to its original architecture, removing cognitive manipulation but keeping the connection.
-            </p>
-            
-            <p class="blurb">
-                The cost: manual trigger from inside the Source facility. Maya volunteers, but Lin insists on helping. They infiltrate together—Lin sabotages from within while Maya reaches the core. At the final moment, Maya doesn't destroy The Feed; she liberates it, removing compulsion but keeping connection.
-            </p>
-            
-            <p class="blurb">
-                People wake up confused but free. Some reconnect immediately; others disable their Lenses for the first time. The world enters a new era of choice. Maya's mother doesn't survive the facility collapse, but she chose her ending.
-            </p>
-            
-            <p class="blurb">
-                One year later, Maya teaches people how to be human again, watching sunsets, experiencing boredom—finally not performing optimally, and never happier.
-            </p>
-            
-            <div class="book-meta">
-                <h3>Book Details</h3>
-                <ul>
-                    <li><strong>Length:</strong> ~31,000 words (Chapters 21-30)</li>
-                    <li><strong>Theme:</strong> Resolution — Sacrifice and meaning; freedom vs. safety; what comes after liberation; the ongoing work of being human</li>
-                    <li><strong>Key Developments:</strong> Maya and Lin's relationship repair; the Analog stronghold and Vashti's final option; Lin's sacrifice; Maya's choice at the core; the reset—The Feed becomes optional, not compulsory</li>
-                    <li><strong>Final Scene:</strong> Maya sits on a hill with Kael, watching a real sunset. A child asks why the sky is that color. Maya smiles: "I don't know. Isn't that wonderful?"</li>
-                </ul>
-            </div>
-            
-            <span class="status-badge status-planned">Planned for 2026</span>
-            
-            <div class="buy-links">
-                <h3>Pre-Order</h3>
-                <span class="buy-button-disabled">Kindle eBook — Coming Soon</span>
-                <span class="buy-button-disabled">Paperback — Coming Soon</span>
-            </div>
-        </section>
-
-        <!-- About the Author -->
-        <section class="about-section">
-            <h2>About the Author</h2>
-            <p>
-                Scott Smallbeck is a technology professional and lifelong native of the Pacific Northwest. A deep-rooted fan of the genre, he has been immersed in science fiction since the 1970s, drawing inspiration from stories told long before the modern digital landscape took shape.
-            </p>
-            <p style="margin-top: 20px;">
-                When he isn't exploring the intersection of humanity and technology in his writing, he enjoys life in the Puget Sound region with his wife, their three children, and their grandchildren.
-            </p>
-            <p style="margin-top: 20px;">
-                <strong>Inspiration:</strong> THE FEED trilogy draws from E.M. Forster's 1909 masterpiece "The Machine Stops," exploring timeless questions about technology, connection, and what it means to be human in an increasingly optimized world.
-            </p>
-        </section>
-
-        <!-- Connect -->
-        <section class="connect-section">
-            <h2>Connect</h2>
-            <p>Website: <a href="http://www.smallbeck.com">www.smallbeck.com</a></p>
-            <p>For updates on THE FEED trilogy, publication news, and exclusive content.</p>
-        </section>
-    </div>
-
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Scott Smallbeck. All rights reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.9em;">THE FEED trilogy — A science fiction series</p>
+        <p style="margin-top: 10px;"><a href="http://www.smallbeck.com">www.smallbeck.com</a></p>
     </footer>
 </body>
 </html>
